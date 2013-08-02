@@ -26,7 +26,7 @@ $kapcsolat = mysql_connect("127.0.0.1", "iytam", "lia123");
 
 
 
-$torol = "DELETE FROM users WHERE id=$_GET[id]";
+$torol = "DELETE FROM users WHERE id='".mysql_real_escape_string($_GET['id'])."'";
 mysql_query($torol);
 echo $torol;
 
